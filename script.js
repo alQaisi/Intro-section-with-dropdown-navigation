@@ -91,6 +91,6 @@ function toggleDropDown2(evt){
     }
 }
 function checkOpenModel2(evt){
-    if(evt.target==this || evt.target.id=="non-drop") 
+    if(evt.target==this || evt.target.id=="non-drop" || evt.target.id=="non-drop2") 
         toggleMenu();
 }
