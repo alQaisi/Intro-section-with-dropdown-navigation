@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: hsl(0, 0%, 98%);
+    font-family: 'Epilogue', sans-serif;
+    overflow-x: hidden;
+}
+main{
+    height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    margin:0 auto;
+}
+.menuIcon{
+    display: none;
+}
+.menu-bar{
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 20px 50px;
+    margin-bottom:35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-bar .links{
+    flex-grow:1;
+}
+a{
+    all: unset;
+    position: relative;
+    font-weight: 500;
+    font-size: .85rem;
+    cursor: pointer;
+    color: hsl(0, 0%, 41%);
+    margin: 0 30px;
+}
+a:hover,.activeItem{
+    color: hsl(0, 0%, 8%);
+}
+.menu-arrow{
+    position: relative;
+    bottom:1px;
+    left:2px;
+    transition: all .25s ease-in-out;
+}
+svg{
+    pointer-events: none;
+}
+a:hover path,.activeItem path{
+    stroke: hsl(0, 0%, 8%);
+}
+.activeItem .menu-arrow{
+    transform: rotate(180deg);
+}
+.logo{
+    height: auto;
+    margin:8px 50px 0px 0px;
+}
+button{
+    font-family: 'Epilogue', sans-serif;
+    outline:none;
+    border-radius: 12px;
+    border: 2px solid hsl(0, 0%, 8%);
+    background-color: hsl(0, 0%, 8%);
+    color: white;
+    padding: 10px 17px;
+    cursor: pointer;
+}
+.menu-bar button{
+    color: hsl(0, 0%, 41%);
+    background-color: white;
+    border: 2px solid hsl(0, 0%, 41%);
+}
+button:hover{
+    border: 2px solid hsl(0, 0%, 8%);;
+    background-color: white;
+    color: hsl(0, 0%, 8%);
+}
+.content{
+    width:85%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction:row-reverse;
+    justify-content: space-between;
+}
+.info{
+    width:50%;
+    z-index:0;
+    box-sizing: border-box;
+    margin-top: 100px;
+    padding:0px 10% 0 0%;
+    position: relative;
+}
+h1{
+    font-size:4rem;
+}
+.mobileH1{
+    display: none;
+    font-size: 3.75rem;
+}
+p{
+    color:hsl(0, 0%, 41%);
+    line-height: 22px;
+    margin-bottom: 50px;
+}
+.info button{
+    font-size: 1.15rem;
+    padding: 13px 20px;
+}
+.clients{
+    width: 100%;
+    max-width:500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:absolute;
+    bottom: 0;
+}
+.hero-image{
+    width:45%;
+}
+.heroImg{
+    display: block;
+    max-height: 695px;
+    width:auto;
+    height: auto;
+    margin: 0 0 0 auto;
+}
+.heroImg2{
+    display: none;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity:0;
+    background-color: rgba(0,0,0,.75);
+    animation-timing-function: ease-in-out;
+    animation-name: overlayShow;
+    animation-delay: 0;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.hide{
+    animation-timing-function: ease-in-out;
+    animation-name: overlayHide;
+    animation-duration: .65s;
+    animation-fill-mode: forwards;
+}
+.hidden{
+    display: none;
+}
+.sidebar-menu{
+    overflow-y: scroll;
+    position: fixed;
+    height: 100%;
+    width:65%;
+    max-width:250px;
+    top:0;
+    bottom: 0;
+    right: 0;
+    background-color: hsl(0, 0%, 98%);
+    transform: translateX(100%);
+    animation-name: initialMove;
+    animation-timing-function: ease-in-out;
+    animation-delay: .15s;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+.hiddenMenu{
+    animation-name: lastMove;
+    animation-delay: .0s;
+    animation-duration: .35s;
+    animation-fill-mode: forwards;
+}
+.sidebar-menu .links{
+    display:flex;
+    flex-direction: column;
+}
+.sidebar-menu .links a{
+    box-sizing: border-box;
+    margin: 10px 25px;
+    font-size: 1.1rem;
+}
+.close{
+    display: block;
+    margin-left: auto;
+    margin:25px 15px 25px auto;
+}
+.menu-bar .dropDown{
+    position: absolute;
+    top:35px;
+    left:-15px;
+    background-color: hsl(0, 0%, 98%);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding:15px 10px;
+}
+.dropDown{
+    max-height: 500px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding:15px 10px 0;
+    border-radius: 9px;
+    cursor: default;
+    transition: max-height .20s cubic-bezier(0.075, 0.82, 0.165, 1),all .35s ease-in-out;
+    box-sizing: border-box;
+}
+.dropDown.hidden{
+    max-height:0;
+    opacity: 0;
+    padding: 0 10px;
+    pointer-events: none;
+}
+.dropDown span{
+    cursor: pointer;
+    color:hsl(0, 0%, 41%);
+    padding: 7px 8px 7px 8px;
+    position: relative;
+    font-size: .75rem;
+    display: flex; 
+    align-items: center;
+}
+.dropDown span:hover{
+    color:hsl(0, 0%, 8%);
+}
+.dropDown img{
+    pointer-events: none;
+    margin-right: 10px;
+}
+@keyframes overlayShow {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity:1;
+    }
+}
+@keyframes overlayHide {
+    from{
+        opacity:1;
+        z-index: 10;
+    }
+    to{
+        opacity:0;
+        z-index: -1;
+    }
+}
+@keyframes initialMove {
+    from {transform:translateX(100%);}
+    to {transform:translateX(0);}
+}
+@keyframes lastMove {
+    from {transform:translateX(0);}
+    to {transform:translateX(100%);}
+}
+@media only screen and (max-width:1240px) {
+    h1{
+        font-size:3rem;
+    }
+    .heroImg{
+        width:100%;
+    }
+    .info{
+        padding:0 0px 0 0%;
+    }
+}
+@media only screen and (max-width:1010px){
+    .content{
+        flex-direction:column;
+        width: 100%;
+        align-items: flex-start;
+    }
+    .heroImg{
+        margin: 0 auto;
+        width:80%;
+        height:auto;
+        max-height: unset;
+    }
+    .hero-image{
+        width: 100%;
+    }
+    .info{
+        width: 100%;
+        padding:0 75px 0 75px;
+        margin-top:75px;
+        text-align: center;
+    }
+    h1{
+        display: none;
+    }
+    .mobileH1{
+        display: initial;
+    }
+    .clients{
+        width: 100%;
+        margin: 30px auto;
+        position:relative;
+        bottom: 0;
+    }
+    .menu-bar{
+        padding: 20px 35px;
+    }
+}
+@media only screen and (max-width:900px){
+    .reg,.menu-bar .links{
+        display: none;
+    }
+    .menuIcon{
+        display: initial;
+    }
+    .menuIcon:hover,.close:hover{
+        cursor: pointer;
+        filter: brightness(550%);
+    }
+}
+@media only screen and (max-width:640px){
+    .mobileH1{
+        font-size:2.5rem;
+    }
+    .info{
+        width: 100%;
+        padding:0px 20px 0 20px;
+        text-align: center;
+    }
+    .menu-bar{
+        padding: 20px;
+        margin-bottom:15px;
+    }
+}
+@media only screen and (max-width:470px){
+    .heroImg{
+        display: none;
+    }
+    .heroImg2{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .clients img{
+        width:65px;
+    }
+}

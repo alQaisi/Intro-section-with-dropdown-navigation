@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+  <link rel="stylesheet" href="style.css">
+  <title>Intro section with dropdown navigation</title>
+</head>
+<body>
+  <main>
+    <div class="menu-bar">
+      <img class="logo" src="images/logo.svg" alt="logo">
+      <div class="links">
+        <a href="#" id="Features1" class="menu-item drop-title">
+          Features
+          <svg class="menu-arrow" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
+          <div class="dropDown hidden">
+            <span class="dropDownItem">
+              <img src="images/icon-todo.svg" alt="todoList">
+              Todo List
+            </span>
+            <span class="dropDownItem">
+              <img src="images/icon-calendar.svg" alt="todoList">
+              Calendar
+            </span>
+            <span class="dropDownItem">
+              <img src="images/icon-reminders.svg" alt="todoList">
+              Reminders
+            </span>
+            <span class="dropDownItem">
+              <img src="images/icon-planning.svg" alt="todoList">
+              Planning
+            </span>
+          </div>
+        </a>
+        <a href="#" id="Company1" class="menu-item drop-title">
+          Company
+          <svg class="menu-arrow" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
+          <div class="dropDown hidden">
+            <span class="dropDownItem">History</span>
+            <span class="dropDownItem">Our Team</span>
+            <span class="dropDownItem">Blog</span>
+          </div>
+        </a>
+        <a href="#" class="menu-item">Careers</a>
+        <a href="#" class="menu-item">About</a>
+      </div>
+      <div class="reg">
+        <a href="#" class="menu-item" id="login">Login</a>
+        <button id="register">Register</button>
+      </div>
+      <img class="menuIcon" src="images/icon-menu.svg" alt="menu">
+    </div>
+    <div class="content">
+      <div class="hero-image">
+        <img class="heroImg" src="images/image-hero-desktop.png" alt="">
+        <img class="heroImg2" src="images/image-hero-mobile.png" alt="">
+      </div>
+      <div class="info">
+        <h1>Make <br> remote work</h1>
+        <h1 class="mobileH1">Make remote work</h1>
+        <p>Get your team in sync, no matter your location. Streamline processes, 
+          create team rituals, and watch productivity soar.</p>
+        <button>Learn more</button>
+        <div class="clients">
+          <img src="images/client-databiz.svg" alt="databiz">
+          <img src="images/client-audiophile.svg" alt="audiophile">
+          <img src="images/client-meet.svg" alt="meet">
+          <img src="images/client-maker.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="overlay" hidden>
+      <div class="sidebar-menu">
+        <img src="images/icon-close-menu.svg" alt="close" class="close">
+        <div class="links">
+          <a href="#" id="Features2" class="menu-item">
+            Features
+            <svg class="menu-arrow" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
+            <div class="dropDown hidden">
+              <span class="dropDownItem">
+                <img src="images/icon-todo.svg" alt="todoList">
+                Todo List
+              </span>
+              <span class="dropDownItem">
+                <img src="images/icon-calendar.svg" alt="todoList">
+                Calendar
+              </span>
+              <span class="dropDownItem">
+                <img src="images/icon-reminders.svg" alt="todoList">
+                Reminders
+              </span>
+              <span class="dropDownItem">
+                <img src="images/icon-planning.svg" alt="todoList">
+                Planning
+              </span>
+            </div>
+          </a>
+          <a href="#" id="Company2" class="menu-item">
+            Company
+            <svg class="menu-arrow" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
+            <div class="dropDown hidden">
+              <span class="dropDownItem">History</span>
+              <span class="dropDownItem">Our Team</span>
+              <span class="dropDownItem">Blog</span>
+            </div>
+          </a>
+          <a href="#" class="menu-item" id="non-drop">Careers</a>
+          <a href="#" class="menu-item" id="non-drop">About</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
